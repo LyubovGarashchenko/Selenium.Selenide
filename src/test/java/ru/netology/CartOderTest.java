@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CartOderTest {
     public WebDriver driver;
@@ -36,7 +37,6 @@ public class CartOderTest {
         driver.findElement(By.cssSelector("[data-test-id='agreement']input")).click();
         driver.findElement(By.cssSelector("button button")).click();
         String text = driver.findElement(By.cssSelector("[data-test-id='order-success']")).getText().trim();
-        assertEquals("  Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text);
-
+        assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text);
     }
 }
